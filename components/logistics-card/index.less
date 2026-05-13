@@ -1,0 +1,65 @@
+.logistics-card {
+  background: #F2F7FF;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 16px;
+  // box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+  // border: 1rpx solid #eeeeee;
+  transition: all 0.2s ease;
+}
+
+.logistics-card:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 24rpx rgba(0, 0, 0, 0.12);
+  background: #f9f9f9;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.tracking-info {
+  color: #333333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+.folder-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+
+  .c-b-l {
+    flex: 1;
+    display: flex;
+    align-items: top;
+
+    .truck-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+    
+    .status-text {
+      font-size: 14px;
+      color: #666666;
+      line-height: 20px;
+      flex: 1;
+    }
+  }
+
+  .c-b-r {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+  }
+}
+

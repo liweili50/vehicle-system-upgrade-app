@@ -1,0 +1,13 @@
+<!-- components/custom-toast/custom-toast.wxml -->
+<view class="custom-toast {{show ? 'show' : ''}}" catchtap="onTap">
+  <view class="toast-content">
+    <!-- <image 
+      wx:if="{{iconMap[type]}}" 
+      src="{{iconMap[type]}}" 
+      class="toast-icon"
+    /> -->
+    <view class="toast-message {{type}}">
+      {{message}}
+    </view>
+  </view>
+</view>

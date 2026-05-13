@@ -1,0 +1,253 @@
+/* 遮罩层 */
+.popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 弹窗容器 */
+.popup-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+
+
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* 弹窗头部 */
+.popup-header {
+  position: relative;
+  padding: 16px;
+  border-bottom: 1rpx solid rgba(229, 229, 229, 0.5);
+  text-align: center;
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+  text-align: center;
+}
+
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 16px;
+  top:18px;
+}
+
+/* 弹窗内容区域 */
+.popup-content {
+  width: 100%;
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+/* 最新状态区域 */
+.latest-status-section {
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.status-tag {
+  font-size: 28rpx;
+  color: #ff9500;
+  background: #fff5e6;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+
+.status-time {
+  font-size: 24rpx;
+  color: #666666;
+  flex: 1;
+}
+
+.latest-badge {
+  font-size: 22rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff9500, #ff6b00);
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+}
+
+/* 中转停滞提示 */
+.stagnation-alert {
+  background: #fff5e6;
+  border: 1rpx solid #ffd699;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin: 20rpx 0;
+}
+
+.stagnation-title {
+  font-size: 28rpx;
+  color: #ff9500;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.stagnation-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-bottom: 5rpx;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+/* 时间线 */
+.timeline {
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30rpx;
+  position: relative;
+}
+
+.node-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #cccccc;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 0 0 #cccccc;
+  z-index: 2;
+}
+
+.latest-dot {
+  background: rgba(0, 194, 97, 1);
+  box-shadow: 0 0 0 2px rgba(0, 194, 97, 1);
+}
+
+.node-line {
+  position: absolute;
+  top: 20rpx;
+  bottom: -40rpx;
+  width: 2rpx;
+  background: #cccccc;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+
+  .t-c-top {
+    display: flex;
+    align-items: center;
+
+    .tct-status {
+      color: rgba(35, 39, 47, 1);
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 500;
+      margin-right: 4px;
+    }
+
+    .timeline-time {
+      font-size: 14px;
+      color: rgba(35, 39, 47, 1);
+      line-height: 22px;
+      margin-right: 4px;
+    }
+
+    .tct-latest {
+      background-color: rgba(242, 247, 255, 1);
+      padding: 2px 16px;
+      border-radius: 40px;
+      color: rgba(22, 120, 255, 1);
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: rgba(138, 144, 153, 1);
+  line-height: 22px;
+  margin-bottom: 10rpx;
+}
+
+.warning-des {
+  display: flex;
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+  .wd-l {
+    padding: 0 12px;
+    background-color: rgba(252, 144, 44, 1);
+    border-radius: 4px 0 0 4px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .wd-r {
+    padding: 0 12px;
+    background-color: rgba(255, 250, 242, 1);
+    border-radius: 0 4px 4px 0;
+    color: rgba(252, 144, 44, 1);
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+
+

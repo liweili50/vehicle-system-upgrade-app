@@ -1,0 +1,2 @@
+<t-navbar title="{{titleText}}" fixed="{{false}}" left-arrow bind:go-back="onBack" t-class="custom-navbar" t-class-title="custom-navbar-title">
+</t-navbar>

@@ -1,0 +1,62 @@
+<!-- 遮罩层 -->
+<view 
+  class="popup-mask" 
+  wx:if="{{show}}" 
+  bind:tap="onClose"
+  catch:touchmove="preventTouchMove"
+></view>
+
+<!-- 弹窗内容 -->
+<view 
+  class="popup-container" 
+  wx:if="{{show}}"
+  animation="{{animation}}"
+>
+  <!-- 弹窗头部 -->
+  <view class="popup-header">
+    <text class="popup-title">物流信息</text>
+    <image bind:tap="onClose"
+        src="/static/common/closeImg.png" 
+        class="close-icon" 
+      />
+  </view>
+  
+  <!-- 弹窗内容区域 -->
+  <scroll-view 
+    class="popup-content" 
+    scroll-y 
+    enhanced 
+    show-scrollbar="{{false}}"
+  >
+    
+    <!-- 时间线区域 -->
+    <view class="timeline">
+        <view 
+          class="timeline-item" 
+          wx:for="{{logisticsData}}" 
+          wx:key="index"
+        >
+          <!-- 时间线节点 -->
+          <view class="timeline-node">
+            <view class="node-dot {{index === 0 ? 'latest-dot' : ''}}"></view>
+            <view class="{{index < logisticsData.length-1 ? 'node-line' : ''}}"></view>
+          </view>
+          
+          <!-- 时间线内容 -->
+          <view class="timeline-content">
+            <view class="t-c-top">
+              <view class="tct-status">{{item.displayStatusName}}</view>
+              <view class="timeline-time">{{item.scanTime}}</view>
+              <view class="tct-latest" wx:if="{{index === 0}}">最新</view>
+            </view>
+            <view class="warning-des" wx:if="{{item.warningFlag}}">
+              <view class="wd-l">{{item.warningTypeName ||''}}</view>
+              <view class="wd-r"><text decode>时长&nbsp;</text>{{item.stagTime ||''}}h <text decode>&nbsp;&nbsp;&nbsp;&nbsp;应操作时间&nbsp;</text>{{item.shouldOpeTime ||''}}</view>
+            </view>
+            <view class="timeline-desc">{{item.description ||''}}</view>
+          </view>
+
+        </view>
+    </view>
+  </scroll-view>
+</view>

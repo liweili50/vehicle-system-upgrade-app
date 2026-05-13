@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/home/index"
+  ],
+  "subpackages": [],
+  "resolveAlias": {
+    "~/*": "/*"
+  },
+  "sitemapLocation": "sitemap.json"
+}
