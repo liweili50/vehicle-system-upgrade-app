@@ -1,7 +1,7 @@
 import env from '~/env';
 
 export default {
-  isMock: false,
+  isMock: true,
   baseUrl: env.baseUrl,
   envName: env.envName,
 };
