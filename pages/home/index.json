@@ -1,9 +1,14 @@
 {
-  "backgroundColor": "#3685FF",
-  "navigationStyle": "custom",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "首页",
+  "backgroundColor": "#F2F2F2",
   "usingComponents": {
     "t-search": "tdesign-miniprogram/search/search",
     "t-navbar": "tdesign-miniprogram/navbar/navbar",
-    "t-image": "tdesign-miniprogram/image/image"
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }

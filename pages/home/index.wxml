@@ -1,3 +1,40 @@
 <view class="home-container">
-  首页
+
+  <view class="search-section">
+    <t-search
+      value="{{searchValue}}"
+      placeholder="搜索品牌名称，如：大众、丰田"
+      bind:change="onSearch"
+      bind:clear="onClear"
+    />
+  </view>
+
+  <view class="result-count" wx:if="{{filteredList.length > 0}}">
+    共 {{filteredList.length}} 个资源
+  </view>
+
+  <scroll-view class="list-scroll" scroll-y enhanced show-scrollbar="{{false}}">
+    <view class="list">
+      <view
+        class="list-item"
+        wx:for="{{filteredList}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bind:tap="goToDetail"
+        hover-class="list-item-hover"
+      >
+        <view class="item-content">
+          <view class="item-header">
+            <text class="item-brand">{{item.name || '通用'}}</text>
+            <t-tag wx:if="{{item.type}}" size="small" variant="light">{{item.brand}}</t-tag>
+          </view>
+          <!-- <view class="item-name">资源内容：{{item.resourceCount}}项</view> -->
+          <view class="item-name">最后更新：{{item.lastUpdate}}</view>
+        </view>
+        <t-icon name="chevron-right" size="36rpx" class="item-arrow" />
+      </view>
+    </view>
+  </scroll-view>
+
+  <t-empty wx:if="{{filteredList.length === 0}}" description="没有找到匹配的资源" />
 </view>

@@ -1,7 +1,5 @@
 {
-  "pages": [
-    "pages/home/index"
-  ],
+  "pages": ["pages/home/index", "pages/detail/index"],
   "subpackages": [],
   "resolveAlias": {
     "~/*": "/*"

@@ -1,0 +1,32 @@
+<view class="video-ad-overlay" wx:if="{{showAd}}">
+  <video
+    class="video-ad-player"
+    src="{{adVideoUrl}}"
+    autoplay
+    controls="{{false}}"
+    show-fullscreen-btn="{{false}}"
+    show-play-btn="{{false}}"
+    show-center-play-btn="{{false}}"
+    object-fit="contain"
+    bindended="onAdEnded"
+    binderror="onAdError"
+  ></video>
+  <view class="video-ad-footer">
+    <view class="video-ad-tip">观看完广告后即可查看详情</view>
+    <view class="video-ad-skip {{canSkip ? '' : 'disabled'}}" bind:tap="skipAd">
+      {{canSkip ? '跳过广告' : adCountdown + 's后跳过'}}
+    </view>
+  </view>
+</view>
+
+<view class="detail-container" wx:else>
+  <view class="detail-card">
+    <view class="detail-name">{{detail.name}}</view>
+    <view class="detail-url-section">
+      <view class="detail-url-label">资源链接</view>
+      <view class="detail-url" bind:tap="copyUrl">{{detail.url}}</view>
+    </view>
+    <t-button class="detail-btn" theme="primary" block bind:tap="copyUrl">复制链接</t-button>
+    <view class="detail-tip">点击链接或按钮复制链接，在浏览器中打开下载</view>
+  </view>
+</view>
